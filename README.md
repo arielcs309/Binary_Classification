@@ -3,8 +3,16 @@ Using the package SKlearn.
 
 # About the project
 
-The project uses machine learning with the package SKlearn. The algorithm predicts weather the apple is good or bad. I used the SVC (Support Vector Classifier) and the Decision Trees. The algorithm learns how to work through the apple information which are: Size, Weight, sweetness, crunchiness, juiciness and ripeness.
-At the first SVC I had to scale the X columns to train.
+The project uses machine learning with the package SKlearn. The algorithm predicts weather the apple is good or bad. I used the SVC (Support Vector Classifier) and the Decision Trees. The algorithm learns how to work through the apple information which are: Size, Weight, sweetness, crunchiness, juiciness and ripeness. I had to change the Y to 1 and 0.
+``` bash
+#changing to a binary result
+change = {
+    'good': 1,
+    'bad': 0
+}
+df.Quality = df.Quality.map(change)
+df
+```
 ## Boxplot
 ``` bash
 df.boxplot(['Size', 'Weight', 'Sweetness', 'Crunchiness',  'Juiciness', 'Ripeness']);
@@ -12,7 +20,7 @@ df.boxplot(['Size', 'Weight', 'Sweetness', 'Crunchiness',  'Juiciness', 'Ripenes
 ![boxplot](https://github.com/arielcs309/Binary_Classification/blob/main/Boxplot.png)
 
 ## Correlation
-Price and square feet have the highest correlation. The others don't have a good correlation since they're close to zero.
+The correlation of the variables are close to 0.2 and -0.3. That means the correlation is very low.
 ![correlation](https://github.com/arielcs309/Binary_Classification/blob/main/Correlation.png)
 
 ## Support Vector Classifier
